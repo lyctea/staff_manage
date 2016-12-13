@@ -28,12 +28,20 @@ class App extends React.Component{
             staff: this.state.staff.searchStaff(word)
         });
     }
+    //删除员工模块
+    removeStaffItem(key){
+        console.log("ManageSystem");
+        this.setState({
+            staff: this.state.staff.removeStaffItem(key)
+        });
+    }
 
     render(){
         return (
             <div>
                 <StaffHeader searchStaff={this.searchStaff.bind(this)}/>
-                <StaffItemPanel items={this.state.staff.staff}/>
+                <StaffItemPanel items={this.state.staff.staff}
+                                removeStaffItem={this.removeStaffItem.bind(this)}/>
                 <StaffFooter addStaffItem={this.addStaffItem.bind(this)}/>
                 <StaffDetail/>
             </div>

@@ -3,6 +3,7 @@ export default class StaffItem extends React.Component{
 	
 	//delete
 	handlerDelete(evt){
+	    console.log("handlerDelete");
 	    this.props.removeStaffItem(this.props.item.key);
 	}
 	
