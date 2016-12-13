@@ -30,16 +30,32 @@ class App extends React.Component{
     }
     //删除员工模块
     removeStaffItem(key){
-        console.log("ManageSystem");
         this.setState({
             staff: this.state.staff.removeStaffItem(key)
+        });
+    }
+
+    //通过ID过滤员工信息
+    filtStaff(filtType){
+        this.setState({
+            staff: this.state.staff.filtStaff(filtType)
+        });
+    }
+
+    //排序
+    sortStaff(sortType){
+        this.setState({
+            staff: this.state.staff.sortStaff(sortType)
         });
     }
 
     render(){
         return (
             <div>
-                <StaffHeader searchStaff={this.searchStaff.bind(this)}/>
+                <StaffHeader searchStaff={this.searchStaff.bind(this)}
+                             filtStaff={this.filtStaff.bind(this)}
+                             sortStaff={this.sortStaff.bind(this)}
+                />
                 <StaffItemPanel items={this.state.staff.staff}
                                 removeStaffItem={this.removeStaffItem.bind(this)}/>
                 <StaffFooter addStaffItem={this.addStaffItem.bind(this)}/>
