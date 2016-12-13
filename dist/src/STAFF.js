@@ -53,6 +53,7 @@ var STAFF = function () {
             this.word = word;
             this.staff = this.allStaff;
             //在staff中搜索
+            //对数组中的每个元素都执行一次指定的函数（callback），并且创建一个新的数组
             this.staff = this.staff.filter(function (item) {
                 return item.info.name.indexOf(word) != -1 || (item.info.age + '').indexOf(word) != -1 || item.info.id.indexOf(word) != -1 || item.info.sex.indexOf(word) != -1;
             });
