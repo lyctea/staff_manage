@@ -1,5 +1,13 @@
 import React from 'react';
 export default class StaffHeader extends React.Component {
+
+    //通过props属性传入的回调函数searchStaff
+    handlerSearch(){
+        let bar = React.findDOMNode(this.refs.searchBar);
+        let value = bar.value;
+        this.props.searchStaff(value);
+    }
+
     render(){
         return (
             <div>
@@ -7,7 +15,7 @@ export default class StaffHeader extends React.Component {
                 <table className="optHeader">
                     <tbody>
                         <tr>
-                            <td className="headerTd"><input type='text' placeholder="Search..."/></td>
+                            <td className="headerTd"><input ref="searchBar" onChange={this.handlerSearch.bind(this)} type='text' placeholder="Search..."/></td>
                             <td className="headerTd">
                                 {/*for 属性规定 label 与哪个表单元素绑定。*/}
                                 <label for="idSelect">人员筛选</label>

@@ -32,7 +32,7 @@ var STAFF = function () {
         // 一个是staff，它是最终需要给React展示的数据，是经过用户筛选操作、关键字搜索操作之后得到的人员数组
         this.staff = this.allStaff;
     }
-    //增加人员
+    //增加员工
 
 
     _createClass(STAFF, [{
@@ -42,6 +42,20 @@ var STAFF = function () {
             this.allStaff.push(newItem);
             this.staff = this.allStaff;
 
+            return this;
+        }
+
+        //搜索员工
+
+    }, {
+        key: 'searchStaff',
+        value: function searchStaff(word) {
+            this.word = word;
+            this.staff = this.allStaff;
+            //在staff中搜索
+            this.staff = this.staff.filter(function (item) {
+                return item.info.name.indexOf(word) != -1 || (item.info.age + '').indexOf(word) != -1 || item.info.id.indexOf(word) != -1 || item.info.sex.indexOf(word) != -1;
+            });
             return this;
         }
     }]);

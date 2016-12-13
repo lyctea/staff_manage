@@ -16,17 +16,23 @@ class App extends React.Component{
         }
     }
 
-    //增加人员
+    //增加员工模块
     addStaffItem(item){
         this.setState({
             staff: this.state.staff.addStaffItem(item)
+        });
+    }
+    //搜索员工信息模块
+    searchStaff(word){
+        this.setState({
+            staff: this.state.staff.searchStaff(word)
         });
     }
 
     render(){
         return (
             <div>
-                <StaffHeader/>
+                <StaffHeader searchStaff={this.searchStaff.bind(this)}/>
                 <StaffItemPanel items={this.state.staff.staff}/>
                 <StaffFooter addStaffItem={this.addStaffItem.bind(this)}/>
                 <StaffDetail/>
