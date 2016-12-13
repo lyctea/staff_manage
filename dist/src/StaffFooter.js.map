@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/StaffFooter.js"],"names":["StaffFooter","Component"],"mappings":";;;;;;;;AAAA;;;;;;;;;;;;IACqBA,W;;;;;;;;;;;iCACT,CAEP;;;;EAHoC,gBAAMC,S;;kBAA1BD,W","file":"StaffFooter.js","sourcesContent":["import React from 'react';\r\nexport default class StaffFooter extends React.Component {\r\n    render(){\r\n        \r\n    }\r\n}"]}
