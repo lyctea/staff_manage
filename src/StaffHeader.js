@@ -9,7 +9,7 @@ export default class StaffHeader extends React.Component {
                         <tr>
                             <td className="headerTd"><input type='text' placeholder="Search..."/></td>
                             <td className="headerTd">
-                                /*for 属性规定 label 与哪个表单元素绑定。*/
+                                {/*for 属性规定 label 与哪个表单元素绑定。*/}
                                 <label for="idSelect">人员筛选</label>
                                 <select id="idSelect">
                                     <option value="0">全部</option>
