@@ -48,6 +48,29 @@ class App extends React.Component{
             staff: this.state.staff.sortStaff(sortType)
         });
     }
+    //打开detail
+    detailStaffItem(key){
+        console.log("detailStaffItem" + key);
+        //返回key相等的数组的第一个元素
+        this.setState({
+            StaffDetail: this.state.staff.staff.filter(item => {
+                return item.key == key;
+            })[0]
+        });
+    }
+    //关闭detail
+    closeDetail(){
+        this.setState({
+            StaffDetail : null
+        })
+    }
+    //编辑detail
+    editDetail(item){
+        this.setState({
+            staff: this.state.staff.editStaffItem(item)
+        })
+    }
+
 
     render(){
         return (
@@ -57,8 +80,15 @@ class App extends React.Component{
                              sortStaff={this.sortStaff.bind(this)}
                 />
                 <StaffItemPanel items={this.state.staff.staff}
-                                removeStaffItem={this.removeStaffItem.bind(this)}/>
+                                removeStaffItem={this.removeStaffItem.bind(this)}
+                                detailStaffItem={this.detailStaffItem.bind(this)}
+                />
                 <StaffFooter addStaffItem={this.addStaffItem.bind(this)}/>
+
+                <StaffDetail staffDetail={this.state.StaffDetail}
+                             closeDetail={this.closeDetail.bind(this)}
+                             editDetail={this.editDetail.bind(this)}
+                />
                 <StaffDetail/>
             </div>
         );

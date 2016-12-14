@@ -9,7 +9,9 @@ export default class StaffItemPanel extends React.Component{
 		    items.push(<tr><th colSpan="5" className="tempEmpty">暂无用户</th></tr>);
 		}else {
 		    this.props.items.forEach(item => {
-			    items.push(<StaffItem key={item.key} item={item} removeStaffItem={this.props.removeStaffItem} detailStaffItem={this.props.detailStaffItem}/>);
+			    items.push(<StaffItem key={item.key} item={item}
+									  removeStaffItem={this.props.removeStaffItem}
+									  detailStaffItem={this.props.detailStaffItem}/>);
 		    });
 		}
 		
