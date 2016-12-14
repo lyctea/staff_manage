@@ -7,7 +7,7 @@ export default class StaffItem extends React.Component{
 	    this.props.removeStaffItem(this.props.item.key);
 	}
 	
-	//detail
+	//detail  这次传入key
 	handlerDetail(evt){
 	    this.props.detailStaffItem(this.props.item.key);
 	}

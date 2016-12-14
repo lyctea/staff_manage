@@ -36,7 +36,6 @@ export default class STAFF {
         this.word = ''; //搜索关键字
         this._sortStaff(this.sortType); //默认按身份排序
         this._filtStaff(this.filtType); //默认全部显示
-
     }
     //增加员工
     addStaffItem(item){

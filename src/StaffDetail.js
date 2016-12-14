@@ -13,7 +13,7 @@ export default class StaffDetail extends React.Component {
         item.descrip = editTabel.querySelector('#staffEditDescrip').value.trim();
         item.sex     = sex.options[sex.selectedIndex].value;
         item.id      = id.options[id.selectedIndex].value;
-        item.key     = this.props.StaffDetail.key;
+        item.key     = this.props.staffDetail.key;
 
         /*
         * 表单验证
@@ -77,7 +77,7 @@ export default class StaffDetail extends React.Component {
 
 
     render (){
-        let staffDetail = this.props.StaffDetail;
+        let staffDetail = this.props.staffDetail;
         if (!staffDetail)
             return null;
         return(
@@ -88,11 +88,11 @@ export default class StaffDetail extends React.Component {
                     <tbody>
                         <tr>
                             <th>姓名</th>
-                            <td><input id="staffEditName" type="text" defaultValue={staffDetail.info.name}></input>></td>
+                            <td><input id="staffEditName" type="text" defaultValue={staffDetail.info.name}></input></td>
                         </tr>
                         <tr>
                             <th>年龄</th>
-                            <td><input id="staffEditAge" type="text" defaultValue={staffDetail.info.age}></input>></td>
+                            <td><input id="staffEditAge" type="text" defaultValue={staffDetail.info.age}></input></td>
                         </tr>
                         <tr>
                             <th>性别</th>
@@ -117,7 +117,7 @@ export default class StaffDetail extends React.Component {
                         <tr>
                             <th>个人描述</th>
                             <td>
-                                <textarea id="staffEditDescrip" type="text" defaultValue={this.info.descrip}></textarea>
+                                <textarea id="staffEditDescrip" type="text" defaultValue={staffDetail.info.descrip}></textarea>
                             </td>
                         </tr>
                     </tbody>

@@ -12,6 +12,7 @@ class App extends React.Component{
         super();
         this.state = {
             staff: new STAFF,
+            //存放详情页
             StaffDetail: null
         }
     }
@@ -57,6 +58,7 @@ class App extends React.Component{
                 return item.key == key;
             })[0]
         });
+        console.log(this.state.StaffDetail);
     }
     //关闭detail
     closeDetail(){
